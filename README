@@ -2,6 +2,8 @@ Home Automation System
 
 Author: Chris Horrocks
 Email: ChrisjHorrocks@gmail.com
+
 Language: Python
 Platforms: *nix, RaspberryPi, Arduino
+
 Description: A home automation app for controlling and scheduling temperature and lighting. Being built on the RaspberryPi dev platform using Arduino sheilds to interface with home electricals (Heaters, Fans, Lightswitches, etc).
