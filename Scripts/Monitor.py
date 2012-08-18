@@ -104,8 +104,10 @@ def Display(strCurrenttime,strSchedtemp,strSensortemp,Sensortemp,Sensortype,strT
 	# Check whether heater or fan is applicable
         if Tempdiff > 0:
             print "The heater will be activated for", strTemptimereq;
-        else:
+        elif Tempdiff < 0:
             print "The fan will be activated for", strTemptimereq[1:]
+	else:
+	    print "The room is at the scheduled temperature";
         print;
 def Menu():
 	# Clear screen
