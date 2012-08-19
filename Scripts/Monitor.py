@@ -15,21 +15,21 @@ def Scheduleimport():
         print "Starting Import...";
         try:
             #Run Schedule Importer script to create schedule_today file
-            os.system('/opt/HomeAutomation/Scripts/Schedule_today.py');
+            os.system('~/Raspi-auto-home/Scripts/Schedule_today.py');
         except:
-            os.system('echo Error: Could not run Schedule Importer script >> /var/log/HomeAutomation/errorlog');
+            os.system('echo Error: Could not run Schedule Importer script >> ~/Raspi-auto-home/errorlog');
         print;
         # Pause
         x = raw_input("Press Enter to Return to Menu");   
 def ScheduleEdit():
     # Edit the master schedule with nano
-    os.system('nano /opt/HomeAutomation/Schedule/schedule');
+    os.system('nano ~/Raspi-auto-home/Schedule/schedule');
     # Recreate the days schedule
     Scheduleimport();
 def SensorCheck(Currenttime,Temprate):
     try:
         # Open the first sensors data file
-        sensorfile = open('/opt/HomeAutomation/Sensors/1', 'r');
+        sensorfile = open('~/Raspi-auto-home/Sensors/1', 'r');
         sensordata = sensorfile.read();
         # Create a list from the csv data
         split = shlex.shlex(sensordata);
@@ -40,12 +40,12 @@ def SensorCheck(Currenttime,Temprate):
         Sensortype = sensorstats[0];
         Sensortemp = sensorstats[1];
     except:
-        os.system('echo Error: Could not get sensor stats >> /var/log/HomeAutomation/errorlog');
+        os.system('echo Error: Could not get sensor stats >> ~/Raspi-auto-home/errorlog');
         # Kick-off the next function
     Processing(Currenttime,Sensortemp,Sensortype,Temprate);
 def Processing(Currenttime,Sensortemp,Sensortype,Temprate):
 	# Read todays schedule file
-	schedfile = open('/opt/HomeAutomation/Schedule/schedule_today', 'r');
+	schedfile = open('~/Raspi-auto-home/Schedule/schedule_today', 'r');
 	Schedule = schedfile.read();
 	# Split 'Schedule' into comma separated list
 	split = shlex.shlex(Schedule);

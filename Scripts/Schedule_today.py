@@ -11,7 +11,7 @@ schedule = [];
 def ReadMaster(schedule):
     try:
         # Read in master schedule line per list entry
-        schedule = [line.strip() for line in open('/opt/HomeAutomation/Schedule/schedule')];
+        schedule = [line.strip() for line in open('~/Raspi-auto-home/Schedule/schedule')];
         # Kick-off next function passing schedule list
         WriteToday(schedule);
     except:
@@ -21,7 +21,7 @@ def ReadMaster(schedule):
 def WriteToday(schedule):
     try:
         # Open todays schedule file
-        schedfile = open('/opt/HomeAutomation/Schedule/schedule_today', 'w');
+        schedfile = open('~/Raspi-auto-home/Schedule/schedule_today', 'w');
         # Search schedule list for today
         schedtoday = str(schedule[localtime()[6]]);
         # Write todays schedule to file

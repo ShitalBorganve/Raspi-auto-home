@@ -2,20 +2,18 @@
 
 import os;
 
-os.system('sudo mkdir /opt/HomeAutomation');
-os.system('sudo mkdir /opt/HomeAutomation/Config');
-os.system('sudo mkdir /opt/HomeAutomation/Scripts');
-os.system('sudo mkdir /opt/HomeAutomation/Schedule');
-os.system('sudo mkdir /opt/HomeAutomation/Sensors');
+os.system('sudo mkdir ~/Raspi-auto-home');
+os.system('sudo mkdir ~/Raspi-auto-home/Config');
+os.system('sudo mkdir ~/Raspi-auto-home/Scripts');
+os.system('sudo mkdir ~/Raspi-auto-home/Schedule');
+os.system('sudo mkdir ~/Raspi-auto-home/Sensors');
 
-os.system('sudo chown pi /opt/HomeAutomation');
-os.system('sudo chown pi /opt/HomeAutomation/Config');
-os.system('sudo chown pi /opt/HomeAutomation/Scripts');
-os.system('sudo chown pi /opt/HomeAutomation/Schedule');
-os.system('sudo chown pi /opt/HomeAutomation/Sensors');
+os.system('sudo chown $LOGNAME ~/Raspi-auto-home/');
+os.system('sudo chown $LOGNAME ~/Raspi-auto-home/Config');
+os.system('sudo chown $LOGNAME ~/Raspi-auto-home/Scripts');
+os.system('sudo chown $LOGNAME ~/Raspi-auto-home/Schedule');
+os.system('sudo chown $LOGNAME ~/Raspi-auto-home/Sensors');
 
-os.system('sudo cp -r $PWD/* /opt/HomeAutomation');
+os.system('sudo cp -r $PWD/* ~/Raspi-auto-home/');
 
 print "Installation complete!";
-print;
-print "App has been installed to: /opt/HomeAutomation/";
